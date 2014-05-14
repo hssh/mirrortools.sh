@@ -1,0 +1,25 @@
+# Settings of mirrortools
+MRT_PATH="$(cd $(dirname "$0")/../;pwd)"
+MRT_PATH_BIN="$MRT_PATH/bin"
+MRT_PATH_CONFIG="$MRT_PATH/config"
+MRT_PATH_COMMAND="$MRT_PATH/command"
+MRT_PATH_LIB="$MRT_PATH/lib"
+MRT_PATH_SKELTON="$MRT_PATH/skelton"
+
+# Mirror's config directory name
+MRT_CONFIG_DIR=.mrt
+
+# Default remote setting name
+MRT_REMOTE_NAME="origin"
+
+# Settings of getopt
+MRT_GETOPT_CMD="getopt"
+
+# Settings of rsync
+MRT_RSYNC_CMD="rsync"
+MRT_RSYNC_OPT="--recursive --checksum --compress --links"
+MRT_EXCLUDES_COMMON="$MRT_PATH_CONFIG/excludes"
+
+# Access control
+# MRT_DENY_PULL=1
+# MRT_DENY_PUSH=1

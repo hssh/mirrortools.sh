@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Load external scripts
+. "$(cd $(dirname "$0");pwd)/../config/config"
+. "$MRT_PATH_LIB/common.sh"
+
+# Variables
+CMD_NAME=`basename $0`
+USAGE="usage: ${cmdname} <command> [<args>]"
+
+# Checks config
+check_config
+if [ $? -ne 0 ]; then
+    exit 1
+fi
+
+# Executes command
+command="$MRT_PATH_COMMAND/$1.sh"
+if [ -f "$command" ]; then
+    CMD_NAME="$CMD_NAME $1"
+    shift
+    . "$command"
+else
+    echo "$CMD_NAME: Unknown command \"$1\"."
+    exit 1
+fi

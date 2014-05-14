@@ -1,0 +1,1 @@
+MRT_RSYNC_OPT="--recursive --checksum --compress"
